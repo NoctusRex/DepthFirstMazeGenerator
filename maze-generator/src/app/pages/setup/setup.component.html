@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand b-0 h1 mx-auto" href="">Maze Generator</a>
+</nav>
+
+<form [formGroup]="form.formGroup" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h1 class="display-4">Settings</h1>
+            <div class="input-group input-group-sm mb-3">
+                <input formControlName="width" class="form-control" min="1" minlength="1" type="number"
+                    placeholder="Width">
+                <div class="input-group-append">
+                    <span class="input-group-text">X</span>
+                </div>
+                <input formControlName="height" class="form-control" min="1" minlength="1" type="number"
+                    placeholder="Height">
+                <div class="input-group-append">
+                    <span class="input-group-text">Rooms</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mx-auto " [disabled]="!form.canSubmit()">Generate Maze</button>
+        </div>
+    </div>
+</form>
